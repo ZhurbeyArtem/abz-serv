@@ -12,7 +12,7 @@ export class SeedersService {
     try {
       const promises = [];
 
-      for (let i = 0; i < 2; i++) {
+      for (let i = 0; i < 45; i++) {
         const user = {
           name: faker.person.firstName(),
           email: faker.internet.email(),

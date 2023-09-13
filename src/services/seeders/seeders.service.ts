@@ -10,7 +10,7 @@ export class SeedersService {
 
   async generate(): Promise<string> {
     try {
-      const promises = [];
+      //const promises = [];
 
       for (let i = 0; i < 45; i++) {
         const user = {
@@ -24,10 +24,11 @@ export class SeedersService {
         });
         delete user.avatar;
         const avatar = bufferImg.data;
-        promises.push(this.authService.registration(user, avatar));
+        await this.authService.registration(user, avatar)
+        //promises.push(this.authService.registration(user, avatar));
       }
       //run several requests to create users and download avatars at the same time,
-      await Promise.all(promises);
+      //await Promise.all(promises);
       return 'success';
     } catch (e) {
       throw e;
